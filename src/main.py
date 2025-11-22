@@ -83,12 +83,13 @@ def generate_page_recursive(dir_path_content, template_path, dest_dir_path, base
 
 
 def main():
+    print(sys.argv[1])
     initiate_directory_copy('static', 'docs')
     generate_page_recursive(
         './content', 
         'template.html', 
         './docs', 
-        f'{sys.argv[0] if sys.argv and sys.argv[0] else '/'}'
+        f'{sys.argv[1] if sys.argv and sys.argv[1] else '/'}'
     )
 
 if __name__ == '__main__':
