@@ -14,11 +14,9 @@ class TestHTMLNode(unittest.TestCase):
         self.assertEqual(node3.props_to_html(), '')
 
         leaf_node = LeafNode(None, 'hello')
-        print(leaf_node, leaf_node.to_html())
         self.assertEqual(leaf_node.to_html(), 'hello')
 
         leaf_node2 = LeafNode('p', 'do we even use <p> things?')
-        print(leaf_node2, leaf_node2.to_html())
         self.assertEqual(leaf_node2.to_html(), '<p>do we even use <p> things?</p>')
 
     def test_to_html_with_children(self):
