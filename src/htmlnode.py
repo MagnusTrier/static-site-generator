@@ -30,7 +30,7 @@ class LeafNode(HTMLNode):
             raise ValueError('Leaf node has no value!')
         if self.tag is None:
             return self.value
-        return f'<{self.tag}>{self.value}</{self.tag}>'
+        return f'<{self.tag}{self.props_to_html()}>{self.value}</{self.tag}>'
 
 class ParentNode(HTMLNode):
     def __init__(self, tag, children, props = None):
